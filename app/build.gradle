@@ -57,6 +57,9 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
 
+    // Youtube data api
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
     // LifeCycle Component
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
@@ -76,6 +79,4 @@ dependencies {
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
-
-
 }
