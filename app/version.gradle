@@ -1,0 +1,22 @@
+ext{
+//    System config
+    COMPILE_SDK = 30
+    BUILD_TOOL = "30.0.3"
+    MIN_SDK_VERSION = 21
+    TARGATED_SDK = 30
+    VERSION_CODE = 1
+    VERSION_NAME = "1.0.0"
+
+//    Production
+    core_ktx = "1.5.0"
+    appcompat = "1.3.0"
+    material = "1.3.0"
+    constraintlayout = "2.0.4"
+    lifecycle_extensions = "2.2.0"
+    lifecycle = "2.3.1"
+
+//    Testing
+    junit = "4.13.2"
+    ext_junit = "1.1.2"
+    espresso_core = "3.3.0"
+}
