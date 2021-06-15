@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'org.jlleitschuh.gradle.ktlint'
+    id 'kotlin-parcelize'
 }
 
 apply from: 'version.gradle'
@@ -30,10 +31,16 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "BASE_URL", BASE_URL
+            buildConfigField "String", "API_KEY", API_KEY
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "BASE_URL", BASE_URL
+            buildConfigField "String", "API_KEY", API_KEY
         }
     }
     compileOptions {
@@ -69,6 +76,9 @@ dependencies {
     // Dagger hilt - Dependency injection lib
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel"
+    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_viewmodel"
+
 
     // Timber - Logging lib
     implementation "com.jakewharton.timber:timber:$timber"
@@ -77,6 +87,14 @@ dependencies {
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_android"
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$coroutines"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$coroutines"
+
+    // Rest API
+    implementation "com.squareup.okhttp:okhttp:$okhttp"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$converter_gson"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor"
 }

@@ -7,12 +7,10 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
+import com.valuelabs.youtubeartists.BuildConfig
 import com.valuelabs.youtubeartists.R
 import com.valuelabs.youtubeartists.databinding.ActivityMainBinding
-import com.valuelabs.youtubeartists.models.TempModel
 import com.valuelabs.youtubeartists.ui.view.showLongToast
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 class MainActivity : YouTubeBaseActivity() {
 
@@ -42,7 +40,7 @@ class MainActivity : YouTubeBaseActivity() {
         }
         mainBinding.playButton.setOnClickListener {
             mainBinding.youtubePlayerView.initialize(
-                "AIzaSyBK3_mBRuQnrQo4QeGcQ7jFQiwmV83c7ck",
+                BuildConfig.API_KEY,
                 youtubeInitListener
             )
         }
