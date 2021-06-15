@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>ForbiddenComment:BlankFragment.kt$BlankFragment$// TODO: doSomething here</ID>
+  </Whitelist>
+</SmellBaseline>

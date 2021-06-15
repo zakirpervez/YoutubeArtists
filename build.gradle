@@ -2,6 +2,7 @@
 buildscript {
     ext.kotlin_version = "1.5.0"
     ext.hilt_version = '2.37'
+    ext.detekt_version = '1.2.0'
     repositories {
         google()
         jcenter()
@@ -20,10 +21,35 @@ buildscript {
     }
 }
 
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "$detekt_version"
+}
+
 allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+detekt {
+    toolVersion = "$detekt_version"
+
+    input = files("$projectDir/app/src/main/java")
+    config = files("$projectDir/detekt/detekt.yml")
+    filters = ".*test.*,.*/resources/.*,.*/build/.*"
+    baseline = file("$projectDir/detekt/baseline.xml")
+    reports {
+        xml.enabled = false
+        html {
+            enabled = true
+            destination = file("build/reports/detekt.html")
+        }
     }
 }
 
