@@ -8,7 +8,6 @@ import com.valuelabs.youtubeartists.models.TempModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-
 @AndroidEntryPoint
 class MainActivity : RootActivity() {
     @Inject

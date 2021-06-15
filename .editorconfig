@@ -1,0 +1,4 @@
+## This file is added specially for ktlint issue of imports order
+root = true
+[{*.kt,*.kts,*.main.kts}]
+disabled_rules = import-ordering
