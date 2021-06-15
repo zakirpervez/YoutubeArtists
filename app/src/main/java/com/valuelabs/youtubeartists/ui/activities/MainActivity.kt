@@ -1,5 +1,7 @@
 package com.valuelabs.youtubeartists.ui.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.valuelabs.youtubeartists.R
@@ -18,5 +20,11 @@ class MainActivity : RootActivity() {
         val mainBinding =
             DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         mainBinding.greetTextView.text = tempModel.greet
+    }
+
+    companion object{
+        fun buildIntent(from: Context): Intent{
+            return Intent(from, MainActivity::class.java)
+        }
     }
 }

@@ -73,4 +73,9 @@ dependencies {
     // Leak canary - Memory leak detection lib
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_android"
 
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+
 }
