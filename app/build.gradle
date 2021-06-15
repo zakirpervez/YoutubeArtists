@@ -65,4 +65,8 @@ dependencies {
     // Dagger hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timber"
+
 }

@@ -14,6 +14,7 @@ ext{
     constraintlayout = "2.0.4"
     lifecycle_extensions = "2.2.0"
     lifecycle = "2.3.1"
+    timber = "4.7.1"
 
 //    Testing
     junit = "4.13.2"
