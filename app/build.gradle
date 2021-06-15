@@ -63,11 +63,14 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
 
-    // Dagger hilt
+    // Dagger hilt - Dependency injection lib
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
-    // Timber
+    // Timber - Logging lib
     implementation "com.jakewharton.timber:timber:$timber"
+
+    // Leak canary - Memory leak detection lib
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_android"
 
 }
