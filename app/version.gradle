@@ -23,7 +23,9 @@ ext{
     retrofit = "2.9.0"
     converter_gson = "2.9.0"
     logging_interceptor = "4.7.2"
-    hilt_lifecycle_viewmodel = "1.0.0-alpha02"
+    navigation = "2.3.5"
+    hilt_dagger = "2.37"
+    hilt_dagger_view_model = "1.0.0-alpha03"
 
 //    Testing
     junit = "4.13.2"

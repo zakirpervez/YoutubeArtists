@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="videoModel"
+            type="com.valuelabs.youtubeartists.models.VideoItem" />
+
+        <variable
+            name="idModel"
+            type="com.valuelabs.youtubeartists.models.Id" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/eTagText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{videoModel.etag}"
+            android:textSize="@dimen/dimen_text_size_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/endGl"
+            app:layout_constraintStart_toStartOf="@id/startGl"
+
+            app:layout_constraintTop_toBottomOf="@id/topGl"
+            tools:text="xN_hzRB1gQ4u0RETvdQWsyFInPw" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/videoIdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{idModel.videoId}"
+            android:textSize="@dimen/dimen_text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/bottomGl"
+            app:layout_constraintEnd_toEndOf="@id/endGl"
+
+            app:layout_constraintStart_toStartOf="@id/startGl"
+            app:layout_constraintTop_toBottomOf="@id/eTagText"
+            tools:text="AsMVVKNCocI" />
+
+        <View
+            android:id="@+id/horizontalLine"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

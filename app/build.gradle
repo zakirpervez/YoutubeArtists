@@ -74,11 +74,15 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
 
     // Dagger hilt - Dependency injection lib
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel"
-    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_viewmodel"
+    implementation "com.google.dagger:hilt-android:$hilt_dagger"
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_dagger_view_model"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_dagger"
+//    kapt "androidx.hilt:hilt-compiler:$hilt_dagger_view_model"
 
+    // JET-PACK NAVIGATION
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigation"
 
     // Timber - Logging lib
     implementation "com.jakewharton.timber:timber:$timber"

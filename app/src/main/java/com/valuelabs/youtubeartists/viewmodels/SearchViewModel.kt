@@ -1,6 +1,5 @@
 package com.valuelabs.youtubeartists.viewmodels
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -9,10 +8,13 @@ import com.valuelabs.youtubeartists.models.YoutubeSearchRequestModel
 import com.valuelabs.youtubeartists.models.YoutubeSearchResponseModel
 import com.valuelabs.youtubeartists.network.Repository
 import com.valuelabs.youtubeartists.util.UNIVERSAL_ERROR_MESSAGE
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel @ViewModelInject constructor(private val repository: Repository) :
+@HiltViewModel
+class SearchViewModel  @Inject constructor(val repository: Repository) :
     RootViewModel() {
 
     private val searchResultMutableLiveData: MutableLiveData<YoutubeSearchResponseModel> =

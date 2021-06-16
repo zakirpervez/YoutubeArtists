@@ -1,13 +1,27 @@
 package com.valuelabs.youtubeartists.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
 import com.valuelabs.youtubeartists.R
+import com.valuelabs.youtubeartists.databinding.ActivitySearchBinding
+import com.valuelabs.youtubeartists.models.VideoItem
+import com.valuelabs.youtubeartists.ui.adapters.SearchAdapter
+import com.valuelabs.youtubeartists.viewmodels.SearchViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class SearchActivity : RootActivity(), SearchAdapter.SearchItemClickListener {
 
-class SearchActivity : RootActivity() {
+    private val searchViewModel: SearchViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+        val searchItemBinding =
+            DataBindingUtil.setContentView<ActivitySearchBinding>(this, R.layout.activity_search)
+    }
+
+    override fun onSearchItemClick(videoItem: VideoItem) {
+
     }
 }

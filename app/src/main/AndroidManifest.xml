@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YoutubeArtists">
-        <activity android:name=".ui.activities.SearchActivity"></activity>
+        <activity android:name=".ui.activities.SearchActivity"/>
         <activity
             android:name=".ui.activities.SplashActivity"
             android:theme="@style/Theme.YoutubeArtists.NoActionBar">
