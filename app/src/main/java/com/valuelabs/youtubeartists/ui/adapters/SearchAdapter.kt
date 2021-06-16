@@ -9,7 +9,7 @@ import com.valuelabs.youtubeartists.models.VideoItem
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
-    private val videoItems: MutableList<VideoItem> = mutableListOf()
+    private val videoItems: MutableList<VideoItem?> = mutableListOf()
     private var searchItemClickListener: SearchItemClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
@@ -23,15 +23,15 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val videoItem = videoItems[position]
         holder.binding.videoModel = videoItem
-        holder.binding.idModel = videoItem.id
+        holder.binding.idModel = videoItem?.id
         holder.binding.root.setOnClickListener {
-            searchItemClickListener?.onSearchItemClick(videoItem)
+            searchItemClickListener?.onSearchItemClick(videoItem!!)
         }
     }
 
     override fun getItemCount(): Int = videoItems.size
 
-    fun populateList(list: List<VideoItem>) {
+    fun populateList(list: List<VideoItem?>) {
         if (videoItems.isNotEmpty()) videoItems.clear()
         videoItems.addAll(list)
         notifyDataSetChanged()

@@ -16,7 +16,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchViewModel  @Inject constructor(val repository: Repository) :
     RootViewModel() {
-
     private val searchResultMutableLiveData: MutableLiveData<YoutubeSearchResponseModel> =
         MutableLiveData()
     val searchResultLiveData: LiveData<YoutubeSearchResponseModel> = searchResultMutableLiveData

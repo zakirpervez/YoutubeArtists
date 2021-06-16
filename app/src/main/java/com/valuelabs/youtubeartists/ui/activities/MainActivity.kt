@@ -22,13 +22,14 @@ class MainActivity : YouTubeBaseActivity() {
     }
 
     private fun setupYoutubePlayer(mainBinding: ActivityMainBinding) {
+        val videoId = intent.getStringExtra(EXTRA_VIDEO_ID)
         val youtubeInitListener = object : YouTubePlayer.OnInitializedListener {
             override fun onInitializationSuccess(
                 provider: YouTubePlayer.Provider?,
                 player: YouTubePlayer?,
                 p2: Boolean
             ) {
-                player?.loadVideo("VQttXb6qE6k")
+                player?.loadVideo(videoId)
             }
 
             override fun onInitializationFailure(
@@ -47,8 +48,11 @@ class MainActivity : YouTubeBaseActivity() {
     }
 
     companion object {
-        fun buildIntent(from: Context): Intent {
-            return Intent(from, MainActivity::class.java)
+        const val EXTRA_VIDEO_ID = "videoId"
+        fun buildIntent(from: Context, videoId: String): Intent {
+            val intent = Intent(from, MainActivity::class.java)
+            intent.putExtra(EXTRA_VIDEO_ID, videoId)
+            return intent
         }
     }
 }

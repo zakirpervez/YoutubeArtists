@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RestService {
-    @GET("service")
+    @GET("search")
     suspend fun getYoutubeSearchResult(
         @Query(KEY_PARAM) apiKey: String,
         @Query(Q_PARAM) query: String,

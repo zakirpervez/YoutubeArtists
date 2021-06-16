@@ -25,7 +25,7 @@ class SplashActivity : RootActivity() {
     private fun navigateToMain() {
         activityScope.launch {
             delay(SPLASH_DELAY)
-            startActivity(MainActivity.buildIntent(this@SplashActivity))
+            startActivity(SearchActivity.buildIntent(this@SplashActivity))
             finish()
         }
     }
