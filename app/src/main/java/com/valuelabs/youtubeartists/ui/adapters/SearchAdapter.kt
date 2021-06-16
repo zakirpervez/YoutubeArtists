@@ -3,6 +3,7 @@ package com.valuelabs.youtubeartists.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.valuelabs.youtubeartists.R
 import com.valuelabs.youtubeartists.databinding.SearchItemBinding
 import com.valuelabs.youtubeartists.models.VideoItem
@@ -24,6 +25,13 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
         val videoItem = videoItems[position]
         holder.binding.videoModel = videoItem
         holder.binding.idModel = videoItem?.id
+
+        val thumbnailUrl = "http://img.youtube.com/vi/${videoItem?.id?.videoId}/0.jpg"
+        Glide
+            .with(holder.binding.root.context)
+            .load(thumbnailUrl)
+            .into(holder.binding.ytImageView)
+
         holder.binding.root.setOnClickListener {
             searchItemClickListener?.onSearchItemClick(videoItem!!)
         }
