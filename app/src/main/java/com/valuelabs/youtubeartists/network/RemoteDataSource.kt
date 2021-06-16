@@ -11,7 +11,8 @@ class RemoteDataSource @Inject constructor(private val restService: RestService)
         restService.getYoutubeSearchResult(
             requestModel.apiKey,
             requestModel.query,
-            requestModel.maxResult
+            requestModel.maxResult,
+            requestModel.part
         )
     }
 }

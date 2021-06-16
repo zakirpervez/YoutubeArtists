@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.valuelabs.youtubeartists.BuildConfig
 import com.valuelabs.youtubeartists.R
 import com.valuelabs.youtubeartists.databinding.ActivitySearchBinding
-import com.valuelabs.youtubeartists.models.VideoItem
 import com.valuelabs.youtubeartists.models.YoutubeSearchRequestModel
+import com.valuelabs.youtubeartists.models.response.VideoItem
 import com.valuelabs.youtubeartists.ui.adapters.SearchAdapter
 import com.valuelabs.youtubeartists.ui.view.showLongToast
 import com.valuelabs.youtubeartists.viewmodels.SearchViewModel
@@ -44,10 +44,16 @@ class SearchActivity : RootActivity(), SearchAdapter.SearchItemClickListener {
                 ) {
                     val query = searchItemBinding.searchEditText.text.toString().trim()
                     if (query.isNotEmpty()) {
-//                        showLongToast("Drawable Click")
                         val request =
-                            YoutubeSearchRequestModel(apiKey = BuildConfig.API_KEY, query, 25)
+                            YoutubeSearchRequestModel(
+                                apiKey = BuildConfig.API_KEY,
+                                query,
+                                25,
+                                "snippet"
+                            )
                         searchViewModel.getYoutubeSearchResult(request)
+                    } else {
+                        showLongToast("Please enter something")
                     }
                     return@OnTouchListener true
                 }
@@ -71,7 +77,7 @@ class SearchActivity : RootActivity(), SearchAdapter.SearchItemClickListener {
         searchViewModel.errorLiveData.observe(this, {
             showLongToast(it)
         })
-        searchViewModel.searchResultLiveData.observe(this, {
+        searchViewModel.searchResultLiveDataModel.observe(this, {
             it?.items?.apply {
                 if (isNotEmpty()) {
                     (searchItemBinding.searchResultRecyclerView.adapter as SearchAdapter).populateList(

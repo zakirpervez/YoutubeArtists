@@ -7,11 +7,15 @@
 
         <variable
             name="videoModel"
-            type="com.valuelabs.youtubeartists.models.VideoItem" />
+            type="com.valuelabs.youtubeartists.models.response.VideoItem" />
 
         <variable
             name="idModel"
-            type="com.valuelabs.youtubeartists.models.Id" />
+            type="com.valuelabs.youtubeartists.models.response.Id" />
+
+        <variable
+            name="snippetModel"
+            type="com.valuelabs.youtubeartists.models.response.Snippet" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_10"
             android:gravity="center"
-            android:text="@{videoModel.etag}"
+            android:text="@{snippetModel.title}"
             android:textSize="@dimen/dimen_text_size_18"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/endGl"

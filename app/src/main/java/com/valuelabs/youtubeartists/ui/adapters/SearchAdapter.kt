@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.valuelabs.youtubeartists.R
 import com.valuelabs.youtubeartists.databinding.SearchItemBinding
-import com.valuelabs.youtubeartists.models.VideoItem
+import com.valuelabs.youtubeartists.models.response.VideoItem
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
@@ -25,8 +25,10 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
         val videoItem = videoItems[position]
         holder.binding.videoModel = videoItem
         holder.binding.idModel = videoItem?.id
+        holder.binding.snippetModel = videoItem?.snippet
 
-        val thumbnailUrl = "http://img.youtube.com/vi/${videoItem?.id?.videoId}/0.jpg"
+//        val thumbnailUrl = "http://img.youtube.com/vi/${videoItem?.id?.videoId}/0.jpg"
+        val thumbnailUrl = videoItem?.snippet?.thumbnails?.medium?.url
         Glide
             .with(holder.binding.root.context)
             .load(thumbnailUrl)

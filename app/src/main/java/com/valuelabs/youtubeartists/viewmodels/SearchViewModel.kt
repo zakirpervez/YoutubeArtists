@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ofroad.android.app.exceptions.ApiException
 import com.valuelabs.youtubeartists.models.YoutubeSearchRequestModel
-import com.valuelabs.youtubeartists.models.YoutubeSearchResponseModel
+import com.valuelabs.youtubeartists.models.response.YoutubeSearchResponseModel
 import com.valuelabs.youtubeartists.network.Repository
 import com.valuelabs.youtubeartists.util.UNIVERSAL_ERROR_MESSAGE
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,16 +16,16 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchViewModel  @Inject constructor(val repository: Repository) :
     RootViewModel() {
-    private val searchResultMutableLiveData: MutableLiveData<YoutubeSearchResponseModel> =
+    private val searchResultMutableLiveDataModel: MutableLiveData<YoutubeSearchResponseModel> =
         MutableLiveData()
-    val searchResultLiveData: LiveData<YoutubeSearchResponseModel> = searchResultMutableLiveData
+    val searchResultLiveDataModel: LiveData<YoutubeSearchResponseModel> = searchResultMutableLiveDataModel
 
     fun getYoutubeSearchResult(requestModel: YoutubeSearchRequestModel) =
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 loadingMutableLiveData.postValue(true)
                 val response = repository.getYoutubeSearchResult(requestModel)
-                searchResultMutableLiveData.postValue(response)
+                searchResultMutableLiveDataModel.postValue(response)
             } catch (e: ApiException) {
                 errorMutableLiveData.postValue(e.message ?: UNIVERSAL_ERROR_MESSAGE)
             } catch (e: NullPointerException) {
