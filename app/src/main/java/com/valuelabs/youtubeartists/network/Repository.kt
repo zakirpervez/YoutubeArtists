@@ -1,7 +1,7 @@
 package com.valuelabs.youtubeartists.network
 
 import com.valuelabs.youtubeartists.models.YoutubeSearchRequestModel
-import com.valuelabs.youtubeartists.models.response.YoutubeSearchResponseModel
+import com.valuelabs.youtubeartists.models.YoutubeSearchResponseModel
 import javax.inject.Inject
 import javax.inject.Singleton
 

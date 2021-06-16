@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.valuelabs.youtubeartists.BuildConfig
 import com.valuelabs.youtubeartists.R
 import com.valuelabs.youtubeartists.databinding.ActivitySearchBinding
+import com.valuelabs.youtubeartists.models.VideoItem
 import com.valuelabs.youtubeartists.models.YoutubeSearchRequestModel
-import com.valuelabs.youtubeartists.models.response.VideoItem
 import com.valuelabs.youtubeartists.ui.adapters.SearchAdapter
 import com.valuelabs.youtubeartists.ui.view.showLongToast
 import com.valuelabs.youtubeartists.viewmodels.SearchViewModel

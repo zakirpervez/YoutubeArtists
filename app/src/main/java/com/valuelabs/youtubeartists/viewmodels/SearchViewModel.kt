@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ofroad.android.app.exceptions.ApiException
 import com.valuelabs.youtubeartists.models.YoutubeSearchRequestModel
-import com.valuelabs.youtubeartists.models.response.YoutubeSearchResponseModel
+import com.valuelabs.youtubeartists.models.YoutubeSearchResponseModel
 import com.valuelabs.youtubeartists.network.Repository
 import com.valuelabs.youtubeartists.util.UNIVERSAL_ERROR_MESSAGE
 import dagger.hilt.android.lifecycle.HiltViewModel

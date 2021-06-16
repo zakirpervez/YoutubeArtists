@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.valuelabs.youtubeartists.R
 import com.valuelabs.youtubeartists.databinding.SearchItemBinding
-import com.valuelabs.youtubeartists.models.response.VideoItem
+import com.valuelabs.youtubeartists.models.VideoItem
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 

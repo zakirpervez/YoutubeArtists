@@ -7,15 +7,15 @@
 
         <variable
             name="videoModel"
-            type="com.valuelabs.youtubeartists.models.response.VideoItem" />
+            type="com.valuelabs.youtubeartists.models.VideoItem" />
 
         <variable
             name="idModel"
-            type="com.valuelabs.youtubeartists.models.response.Id" />
+            type="com.valuelabs.youtubeartists.models.Id" />
 
         <variable
             name="snippetModel"
-            type="com.valuelabs.youtubeartists.models.response.Snippet" />
+            type="com.valuelabs.youtubeartists.models.Snippet" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
