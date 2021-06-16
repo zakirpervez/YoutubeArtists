@@ -1,4 +1,4 @@
-package com.valuelabs.youtubeartists.models.response
+package com.valuelabs.youtubeartists.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
